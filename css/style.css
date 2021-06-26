@@ -1,0 +1,29 @@
+
+#manche__form {
+    margin: 30px 15px;
+}
+
+#manche {
+    display:flex;
+    flex-direction: column;
+    margin: 30px 15px;
+}
+
+.manche__corde {
+    display:flex;
+}
+
+.manche__fret {
+    flex: 1 1 0px;
+    text-align: center;
+    vertical-align: center;
+    border: 1px solid black;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.manche__fret_sillet{
+    background-color: grey;
+    border-right: 5px solid black;
+}
+
