@@ -1,14 +1,11 @@
 import Manche from './composants/Manche.mjs'
-import * as Solfege from './Solfege.mjs'
+import Solfege from './Solfege.mjs'
 import * as env from './env.mjs'
 
-// customElements.define('manche-bass', Manche)
 
-// env.manche__form.addEventListener('submit', initManche);
-
-let test = new Solfege("fr");
-
-console.log(test.listerNotesCorde(4, 21));
-
-
-
+let section_manche = document.getElementById('section_manche');
+let manche = new Manche();
+manche.accordage = [ "Mi", "La", "Ré", "Sol" ];
+let test = document.createElement('span');
+test.textContent = "Test"
+section_manche.appendChild(test);

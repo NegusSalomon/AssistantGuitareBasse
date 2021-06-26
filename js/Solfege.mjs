@@ -1,14 +1,4 @@
-// Notes
-
-const notesFr = ["Do", "Do#/Re♭", "Ré", "Ré#/Mi♭", "Mi", "Fa", "Fa#/Sol♭", "Sol", "Sol#/La♭", "La", "La#/Si♭", "Si/Do♭" ]
-const notesUs = ["C", "C#/D♭", "D", "D#/E♭", "E", "F", "F#/G♭", "G", "G#/A♭", "A", "A#/B♭", "B/C♭" ]
-
-// Gammes
-const gammeMajeure = { "tonique": 0, "seconde": 2, "tierce": 2, "quarte": 1, "quinte": 2, "sixte": 2, "septième": 2 }
-
-
-// Accords
-
+import * as env from './env.mjs'
 
 export default class Solfege {
 
@@ -16,10 +6,10 @@ export default class Solfege {
         this.typeNotation = typeNotation;
         switch(typeNotation){
             case "fr":
-                this.notes = notesFr;
+                this.notes = env.notesFr;
                 break;
             case "us":
-                this.notes = notesUS;
+                this.notes = env.notesUS;
                 break;
         }
     }
@@ -47,6 +37,3 @@ export default class Solfege {
         return notesGamme;
     }
 }
-
-let test = new Solfege("fr");
-console.log(test.listerNotesGamme("Do", gammeMajeure))

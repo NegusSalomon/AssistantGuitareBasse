@@ -2,7 +2,7 @@ import Solfege from '../Solfege.mjs'
 import * as env from '../env.mjs'
 
 const template = document.createElement('template')
-template.innerHTML = `<table class="table table-bordered table-responsive d-flex justify-content-center"></table>`
+template.innerHTML = `<div id="manche"></div>`
 const templateCorde = document.createElement('template')
 templateCorde.innerHTML = `<div class="manche__corde"></div>`
 const templateSillet = document.createElement('template')
@@ -13,27 +13,31 @@ templateFret.innerHTML = `<div class="manche__fret"></div>`
 
 export default class Manche extends HTMLElement{
 
-    set nbCordes (nbCordes) {
-        this.nbCordes = nbCordes;
-    }
-
-    get nbCordes() {
-        return this.nbCordes
-    }
-
-    set nbFrets (nbFrets) {
-        this.nbFrets = nbFrets;
-    }
-
-    get nbFrets() {
-        return this.nbFrets
-    }
-
     constructor(){
         super()
+        this.boiteANote = new Solfege("fr");
     }
 
+    creationCorde(noteDepart){
+        let notesCorde = this.boiteANote.listerNotesCorde(noteDepart, this.nbFrets);
+        let corde = document.importNode(templateCorde.content, true);
 
+        notesCorde.forEach(note => {
+            let fret = document.importNode(templateCorde.content, true);
+            fret.textContent = note;
+            corde.appendChild(fret);
+        });
+        return corde;
+    }
+
+    creationManche(){
+        let manche = document.importNode(template.content, true);
+        this.accordage.forEach(noteAVide => {
+            manche.appendChild(this.creationCorde(noteAVide));
+        });
+        return manche
+    }
+    
 }
 
-customElements.define('app-manche', Manche)
+customElements.define('app-manche', Manche);
