@@ -10,25 +10,166 @@
 
 </head>
 <body>
-    <form id="manche__form" class="form form-group row" action="#">
-        <div id="manche__selection_nb_cordes" class="col-2">
-            <select class="form-select" id="manche__selection_nb_cordes__select">
-                <option value="4" selected>4 cordes</option>
-                <option value="5">5 cordes</option>
-                <option value="6">6 cordes</option>
+    <div id="manche__form" class="container row mt-3">
+        <div class="input-group">
+            <div id="manche__selection_nb_cordes" class="col-2 mb-3">
+                <select class="form-select" id="manche__selection_nb_cordes__select">
+                    <option value="4" selected>4 cordes</option>
+                    <option value="5">5 cordes</option>
+                    <option value="6">6 cordes</option>
+                    <option value="7">7 cordes</option>
+
                 </select>
-        </div>
-        <div id="manche__selection_nb_frets" class="col-2">
-            <select class="form-select" id="manche__selection_nb_frets__select">
-                <option value="21" selected>21 frets</option>
-                <option value="22">22 frets</option>
-                <option value="24">24 frets</option>
+            </div>
+            <div id="manche__selection_nb_frets" class="col-2 mb-3">
+                <select class="form-select" id="manche__selection_nb_frets__select">
+                    <option value="21" selected>21 frets</option>
+                    <option value="22">22 frets</option>
+                    <option value="24">24 frets</option>
                 </select>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary col-1" id="manche__btn_valider">Valider</button>
-    </form>
-<div id="section_manche"></div>
+        <div class="input-group">
+            <div id="manche__selection_accordage" class="input-group mb-3 col-6">
+                <select class="form-select" id="manche__selection_accordage__select_1" class="manche__selection_accordage__select">
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi" selected>Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_2" class="manche__selection_accordage__select">
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La" selected>La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_3" class="manche__selection_accordage__select">
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré" selected>Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_4" class="manche__selection_accordage__select">
+                    <option value="Do" selected>Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol" selected>Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_5" class="manche__selection_accordage__select">
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_6" class="manche__selection_accordage__select">
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+                <select class="form-select" id="manche__selection_accordage__select_7" class="manche__selection_accordage__select" >
+                    <option value="Do">Do</option>
+                    <option value="Do#/Ré♭">Do#/Ré♭</option>
+                    <option value="Ré">Ré</option>
+                    <option value="Mi">Mi</option>
+                    <option value="Fa">Fa</option>
+                    <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                    <option value="Sol">Sol</option>
+                    <option value="Sol#/La♭">Sol#/La♭</option>
+                    <option value="La">La</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="La#/Si♭">La#/Si♭</option>
+                    <option value="Si/Do♭">Si/Do♭</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group">
+            <button type="button" class="btn btn-primary col-1" id="manche__btn_valider">Valider</button>
+        </div>
+    </div>
+    <app-manche nbfrets="21" nbcordes="4" accordage='["Sol", "Ré", "La", "Mi"]'></app-manche>
+    <div class="container row">
+        <div class="input-group mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="manche__form__notes" id="manche__form__notes__gammes" value="gamme">
+                <label class="form-check-label" for="manche__form__notes__gammes">Gamme</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="manche__form__notes" id="manche__form__notes__arpege_accord" value="arpege_accord">
+                <label class="form-check-label" for="manche__form__notes__arpege_accord">Arpège/Accord</label>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <select class="form-select" id="manche__selection_accordage__select_7" class="manche__selection_accordage__select" >
+                <option value="Do">Do</option>
+                <option value="Do#/Ré♭">Do#/Ré♭</option>
+                <option value="Ré">Ré</option>
+                <option value="Mi">Mi</option>
+                <option value="Fa">Fa</option>
+                <option value="Fa#/Sol♭">Fa#/Sol♭</option>
+                <option value="Sol">Sol</option>
+                <option value="Sol#/La♭">Sol#/La♭</option>
+                <option value="La">La</option>
+                <option value="La#/Si♭">La#/Si♭</option>
+                <option value="La#/Si♭">La#/Si♭</option>
+                <option value="Si/Do♭">Si/Do♭</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <button type="button" class="btn btn-primary col-1" id="manche__btn_valider">Valider</button>
+        </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="js/app.js" type="module"></script>
+    <script src="js/app.mjs" type="module"></script>
+    <script src="js/composants/Manche.mjs" type="module"></script>
 </body>
 </html>
