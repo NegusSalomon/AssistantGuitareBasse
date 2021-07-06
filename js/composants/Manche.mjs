@@ -12,7 +12,7 @@ templateFret.innerHTML = `<div class="manche__fret"></div>`;
 
 export class Manche extends HTMLElement{
 
-    static get observedAttributes() { return ['nbfrets', 'nbcordes', 'accordage']; };
+    static get observedAttributes() { return ['nbfrets', 'nbcordes', 'accordage', 'gamme']; };
 
     constructor(){
         super()
@@ -53,7 +53,7 @@ export class Manche extends HTMLElement{
     }
 
     creationCorde(noteDepart){
-        var notesCorde = this.boiteANote.listerNotesCorde(noteDepart, this.nbfrets);
+        var notesCorde = this.boiteANote.listerNotesChromatique(noteDepart, this.nbfrets);
         let corde = document.importNode(templateCorde.content, true);
         let compteurFrets = 0
         notesCorde.forEach(note => {
@@ -81,6 +81,9 @@ export class Manche extends HTMLElement{
     render(){
         this.manche = document.importNode(templateManche.content, true);
         this.creationManche();
+        if(this.gammeChromatique){
+            this.colorerFrets(this.gammeAAfficher)
+        }
         this.appendChild(this.manche)
     }
 
@@ -100,11 +103,36 @@ export class Manche extends HTMLElement{
                 case 'accordage':
                     this.accordage = newValue;
                     break;
+                case 'gamme':
+                    if(newValue != ''){
+                        let newValueParse = JSON.parse(newValue)
+                        this.toniqueGamme = newValueParse[0];
+                        this.gammeStr = newValueParse[1];
+                        this.modeGamme = newValueParse[2];
+                        this.gammeChromatique = this.boiteANote.listerNotesChromatique(this.toniqueGamme, this.gammeStr)
+                        this.gammeAAfficher = this.boiteANote.listerNotesGamme(this.toniqueGamme, this.gammeStr)
+                    }
+                    break;
            }
          }
-         this.querySelector('#manche').remove()
-         this.render()
+        this.querySelector('#manche').remove()
+        this.render()
     }
+
+    colorerFrets(listeNotes){
+        let listeNotesArr = []
+        for(const [key, value] of Object.entries(listeNotes)){
+            listeNotesArr.push(value)
+        }
+        this.manche.querySelectorAll('.manche__fret').forEach(function(fret){
+            listeNotesArr.forEach(function(note){
+                if(fret.textContent === note){
+                    fret.classList.add('bg-info')
+                }
+            })
+        });
+    }       
+
 }
 
 customElements.define('app-manche', Manche);

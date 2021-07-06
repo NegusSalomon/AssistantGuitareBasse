@@ -20,7 +20,9 @@ export const notesFr = ["Do", "Do#/Ré♭", "Ré", "Ré#/Mi♭", "Mi", "Fa", "Fa
 export const notesUs = ["C", "C#/D♭", "D", "D#/E♭", "E", "F", "F#/G♭", "G", "G#/A♭", "A", "A#/B♭", "B/C♭" ]
 
 // Gammes
-export const gammeMajeure = { "tonique": 0, "seconde": 2, "tierce": 2, "quarte": 1, "quinte": 2, "sixte": 2, "septième": 2 }
+
+export const intervallesGammeMajeure = { "I": 0, "II": 2, "III": 4, "IV": 5, "V": 7, "VI": 9, "VII": 11 }
+export const intervallesGammeMineureNaturelle = { "I": 0, "II": 2, "III": 3, "IV": 5, "V": 7, "VI": 9, "VII": 10 }
 
 
 // Accords

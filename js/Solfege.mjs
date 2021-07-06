@@ -14,25 +14,33 @@ export default class Solfege {
         }
     }
 
-    listerNotesCorde(noteDepart, nbFrets){
+    listerNotesChromatique(noteDepart, nbNotes){
         let indexNote = this.notes.indexOf(noteDepart)
-        let notesCorde = []
-        for(let i=0; i<nbFrets; i++){
-            notesCorde.push(this.notes[indexNote]);
+        let notesChromatique = []
+        for(let i=0; i<nbNotes; i++){
+            notesChromatique.push(this.notes[indexNote]);
             if(indexNote == this.notes.length -1 ){
                 indexNote = 0;
             } else {
                 indexNote++;
             }
         }
-        return notesCorde;
+        return notesChromatique;
     }
 
-    listerNotesGamme(tonique, gamme){
-        let indexNote = this.notes.indexOf(tonique)
+    listerNotesGamme(tonique, typeGamme){
+        let gamme
+        let nbNotes
+        switch(typeGamme){
+            case "gamme_majeure":
+                gamme = env.intervallesGammeMajeure
+                nbNotes = 12
+                break
+        }
+        let gammeChromatique = this.listerNotesChromatique(tonique, nbNotes)
         let notesGamme = {}
-        for(let intervalle in gamme){
-            notesGamme[intervalle] =this.notes[indexNote += gamme[intervalle]];
+        for(const [key, value] of Object.entries(gamme)){
+            notesGamme[key] = gammeChromatique[value]
         }
         return notesGamme;
     }

@@ -15,7 +15,7 @@
     vertical-align: center;
     border: 1px solid black;
     height: 50px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .manche__fret_sillet{
@@ -23,3 +23,15 @@
     border-right: 5px solid black;
 }
 
+.tab-pane {
+
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px 0px 5px 5px;
+    padding: 15px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
